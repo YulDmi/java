@@ -1,0 +1,52 @@
+﻿<meta charset="utf-8">
+<script>
+	
+	var text ="Положите 4 пальца левой руки - мизинец , безымянный, средний и указательный  - на клавиши ф, ы, в, а. Запомните, что буква А находится под вашим указательным пальцем, а Ф -  под мизинцем.\n Теперь неспеша набирайте текст.\n Постарайтесь не смотреть на клавиатуру.";
+	var text1 ="Повторяйте за мной";
+	var text2 = "Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний — на Л, указательный — на О. Запомните расположение пальцев.";
+	
+	
+	var letters = [];
+	letters[0] = ["ф","а"];
+	letters[1] = ["ы","в"];
+	letters[2] = ["о","ж"];
+
+
+	function getRandomNumber(max) {
+	  return Math.round(Math.random() * max);
+	}
+	
+	function generateText(letters, length) {
+	  var text = "";
+	  for (var i = 0; i < length; i++) {
+	    var n = getRandomNumber(letters.length - 1);
+ 	    text += letters[n];
+	  }return text;
+	}
+
+	var level = 3;
+	
+	alert("Вас приветствует программа по обучению слепой печати");
+	alert(text);
+	
+	function trening(i){
+ 		
+		while(true) {
+		 alert(text1);
+	 	 var text =  generateText(letters[i], 10);
+	 	 var userText = prompt(text);
+	  	    if (userText == text) {
+	   		alert ("Все верно!");
+	  		break;
+	  	    } else  alert("Вы ошиблись. Попробуйте еще раз");
+	 	}
+	}
+
+	for (var i = 0; i < level; i++){
+		
+		trening(i);
+		alert("Вы переходите на уровень " + (i + 1));
+		alert(text2);
+		
+        }
+</script>
