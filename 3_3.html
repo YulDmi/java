@@ -1,0 +1,32 @@
+﻿<meta charset="utf-8">
+<script>
+	var count = 0;
+	var puzzles = [
+		["Не книжка, а с листьями?", "капуста", "качан" ],
+		["Снаружи красна, внутри бела, На голове хохолок - зелененький лесок.", "редиска", "редис"],
+		["В каком слове «спрятался» напиток и природное явление?", "виноград"],
+		["Какая нота и продукт называются одиноково?", "соль"]
+	];
+	function getWin (answer1, i){
+		var task = puzzles[i];
+		for (var j = 1; j < task.length; j++ ){
+			if (task[j] == answer1) return true;
+		} return false;
+	}
+           
+
+	for (var i = 0; i , i < puzzles.length; i++){
+		var answer = prompt(puzzles[i][0]);
+		answer = answer.toLowerCase();
+	if (getWin(answer, i)){
+		alert("Ответ верный!");
+		count++;
+	   }else alert("Ты не угадал. Ответ : " + puzzles[i][1]);
+	}
+
+ 	  alert("Игра закончена!");
+   			 if (count >= 2) document.write("Ты угадал " + count + " загадки.");
+   			 if (count == 0) document.write("Ты не угадал ни одной загадки.");
+   			 if (count == 1) document.write("Ты угадал 1 загадку.");
+
+</script>
